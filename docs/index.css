@@ -1,0 +1,498 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins";
+}
+
+.navbar {
+    height: 10vh;
+    background-color: #fffbf4;
+    padding: 0 5em 0 5em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    border-bottom: 0.2em solid black;
+}
+
+.navbar .title-container .title {
+    font-weight: bold;
+}
+
+.nav-item.active a {
+    font-weight: bold;
+    color: black;
+}
+
+.item-container {
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+}
+
+.item-container a {
+    color: black;
+    text-decoration: none;
+}
+
+.navbar .btn {
+    text-align: right;
+}
+
+.btn button {
+    cursor: pointer;
+    padding: 1em 1.7em;
+    background: none;
+    border-radius: 0.5em;
+    background-color: #ffe959;
+    box-shadow: 3px 3px black;
+}
+
+.btn a {
+    cursor: pointer;
+    padding: 1em 1.7em;
+    background: none;
+    border-radius: 0.5em;
+    background-color: #ffe959;
+    box-shadow: 3px 3px black;
+}
+
+.btn-secondary button {
+    cursor: pointer;
+    padding: 1em 1.7em;
+    background: none;
+    border-radius: 0.5em;
+    background-color: #ffffff;
+    box-shadow: 3px 3px black;
+}
+
+.banner {
+    height: 60vh;
+    background-color: #fffada;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    padding: 0 5rem 0 5rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.profile-title {
+    margin-bottom: 1em;
+}
+
+.profile-title h2 {
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.profile-title h1 {
+    font-size: 50px;
+}
+
+.horizontal-line {
+    height: 2px;
+    background-color: black;
+    width: 15%;
+    margin-right: 10px;
+}
+
+.work-title {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.work-title p {
+    font-size: 20px;
+}
+
+.banner-button {
+    display: flex;
+    gap: 10px;
+}
+
+.profile-picture {
+    text-align: end;
+}
+
+.profile-picture img {
+    width: 50%;
+    border: 4px solid black;
+    border-radius: 100%;
+    background-color: #fffbf4;
+    object-fit: cover;
+}
+
+.accessories img {
+    width: 124px;
+}
+
+/* WDID */
+.wdid {
+    text-align: center;
+    padding-top: 3em;
+    padding-bottom: 5%;
+    background-color: #fffbf4;
+}
+
+.line-section {
+    border-bottom: 4px dashed #ffe959;
+    width: 8%;
+    margin: auto;
+}
+
+.wdid-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5em 0 5em;
+    margin-top: 3em;
+    gap: 3em;
+}
+
+.wdid-item {
+    padding: 1em 1.7em;
+    background: none;
+    border-radius: 0.3em;
+    background-color: #fff;
+    box-shadow: 3px 3px black;
+    border: 2px solid black;
+    width: 100%;
+    text-align: start;
+}
+
+.item-title {
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+/* Skills */
+.skills {
+    background-color: #fffada;
+    padding: 3em 5em 5em 5em;
+}
+
+.skills-title {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.skills-content {
+    display: flex;
+    gap: 5%;
+    flex-wrap: wrap;
+    row-gap: 2em;
+    justify-content: center;
+}
+
+.skills-item {
+    display: flex;
+    border: 2px solid black;
+    align-items: center;
+    padding: 1em 2.5em;
+    border-radius: 50px;
+    box-shadow: 3px 3px black;
+}
+
+.item-title {
+    margin: 0;
+}
+
+/* Experience */
+.experience {
+    background-color: #fffbf4;
+    padding: 3em 5em 5em 5em;
+}
+
+.experience-title {
+    text-align: center;
+}
+
+.experience-content {
+    margin-top: 2em;
+}
+
+table {
+    width: 100%;
+}
+
+/* Projects */
+.projects {
+    background-color: #fffada;
+    padding: 3em 5em 6em 5em;
+}
+
+.projects-title {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.projects-content {
+    position: relative;
+}
+
+.project-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(50px) scale(0.98);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.6s;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.project-slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    position: relative;
+}
+
+.project-content-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 10%;
+}
+
+.project-images {
+    width: 100%;
+    position: relative;
+}
+
+.project-image {
+    box-shadow: 3px 3px black;
+    border: 2px solid black;
+    border-radius: 0.5em;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.project-content-left-title {
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.project-content-left-subtitle {
+    margin: 3% 0;
+}
+
+.slider-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    gap: 10px;
+}
+
+.slider-buttons button {
+    background-color: #fffbf4;
+    width: 40px;
+    height: 10px;
+    border-radius: 0.3em;
+    cursor: pointer;
+}
+
+.slider-buttons button.active {
+    background-color: #ffe959;
+}
+
+/* Work With Me */
+.wwm {
+    padding: 10% 0;
+    text-align: center;
+}
+
+.wwm-title {
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.wwm-container {
+    border: 2px solid black;
+    margin: 0 5em 0 5em;
+    padding: 7em 0 7em 0;
+    border-radius: 0.5em;
+    background-color: #fffada;
+    box-shadow: 3px 3px black;
+}
+
+.wwm-content {
+    padding: 15px 0;
+}
+
+footer {
+    padding: 2em 5em;
+    background-color: #000;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-right-section {
+    font-size: 24px;
+}
+
+i {
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .profile-picture {
+        display: none;
+    }
+
+    .wdid-content {
+        flex-direction: column;
+    }
+
+    .skills-content {
+        font-size: 10px;
+    }
+
+    .projects {
+        padding-bottom: 0;
+    }
+
+    .project-slide {
+        grid-template-columns: 1fr;
+    }
+
+    .project-content-right {
+        display: none;
+    }
+
+    .projects {
+        padding: 3em 25px 3em 25px;
+    }
+
+    .project-content-left {
+        font-size: 13px;
+    }
+
+    .project-content-left-title {
+        font-size: 17px;
+    }
+
+    .slider-buttons {
+        margin-top: 4rem;
+    }
+
+    .project-content-left-subtitle {
+        text-align: justify;
+    }
+
+    .profile-title h2 {
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    .profile-title h1 {
+        font-size: 30px;
+    }
+
+    .work-title p {
+        font-size: 15px;
+    }
+
+    .btn button {
+        padding: 0.5em 0.8em;
+    }
+
+    .btn-secondary button {
+        padding: 0.5em 0.8em;
+    }
+
+    .wdid-item p {
+        font-size: 13px;
+    }
+
+    .wdid-content {
+        padding: 0 25px 0 25px;
+    }
+
+    .container {
+        padding: 0 25px 0 25px;
+        width: 100%;
+        display: flex;
+    }
+
+    .wdid {
+        padding-bottom: 20%;
+    }
+
+    .wwm-container {
+        margin: 0 25px 0 25px;
+        border-radius: 0;
+        padding: 5em 2em 5em 2em;
+    }
+
+    .profile-title h2 {
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    .wwm-container p {
+        font-size: 15px;
+    }
+
+    .navbar {
+        grid-template-columns: 1fr;
+        height: auto;
+        padding: 1rem 25px;
+    }
+
+    .title-container {
+        text-align: left;
+    }
+
+    .experience {
+        padding: 3em 25px 5em 25px;
+        font-size: 13px;
+    }
+
+    .title-container .title {
+        margin-bottom: 10px;
+    }
+
+    .item-container {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .waButton {
+        display: none;
+    }
+
+    footer {
+        display: block;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .footer-right-section {
+        margin-top: 5px;
+    }
+}
